@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('SCM checkout') {
       steps {
-        svn 'svn://svn.riscos.info/gccsdk/trunk/gcc4'
+        checkout([$class: 'SubversionSCM', remote: 'svn://svn.riscos.info/gccsdk/trunk/gcc4'])
       }
     }
     stage('Build') {
