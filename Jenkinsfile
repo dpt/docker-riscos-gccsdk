@@ -9,6 +9,7 @@ pipeline {
       stage('Build') {
         agent {
           dockerfile {
+            label 'docker '
           }    
         }
         steps {
