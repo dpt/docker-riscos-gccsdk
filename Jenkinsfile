@@ -1,9 +1,4 @@
 pipeline {
-  agent {
-    dockerfile {
-      label 'docker'
-    }    
-  }
   stages {
     stage('SCM checkout') {
       steps {
@@ -11,6 +6,11 @@ pipeline {
       }
     }
     stage('Build') {
+      agent {
+        dockerfile {
+          label 'docker'
+        }    
+      }
       steps {
         script {
           dockerImage = docker.build 'riscos-gccsdk-4.7'
