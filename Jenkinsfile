@@ -1,5 +1,5 @@
 pipeline {
-  node ('docker') {
+  agent { label 'docker' }
     stages {
       stage('Checkout SVN') {
         steps {
@@ -18,5 +18,5 @@ pipeline {
         }
       }
     }
-  }
+
 }
