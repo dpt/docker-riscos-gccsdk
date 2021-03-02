@@ -1,6 +1,9 @@
 pipeline {
   stages {
     stage('SCM checkout') {
+      agent {
+        label 'focal'
+      }
       steps {
         checkout([$class: 'SubversionSCM', remote: 'svn://svn.riscos.info/gccsdk/trunk/gcc4'])
       }
