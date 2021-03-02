@@ -1,8 +1,16 @@
 pipeline {
   agent {
-    docker {
-      image 'riscos-gccsdk-4.7'
+    dockerfile {
       label 'docker'
+    }    
+  }
+  stages {
+    stage('Build') {
+      steps {
+        script {
+          dockerImage = docker.build 'riscos-gccsdk-4.7'
+        }
+      }
     }
   }
 }
