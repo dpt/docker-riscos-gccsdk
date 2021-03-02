@@ -9,7 +9,8 @@ pipeline {
       stage('Build') {
         agent {
           dockerfile {
-            label 'docker '
+            label 'docker'
+            reuseNode true
           }    
         }
         steps {
