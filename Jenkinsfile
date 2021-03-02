@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'focal'
+    label 'master'
   }
   stages {
     stage('SCM checkout') {
