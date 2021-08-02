@@ -15,6 +15,7 @@ pipeline {
           }    
         }
         steps {
+           sh 'cp ./gccsdk-params ./gcc4'
            sh 'cd gcc4 && MAKEFLAGS=-j$(nproc) ./build-world'
 	   sh 'echo "Compile successful"'
            sh 'ls -l ${WORKSPACE}/riscos-gccsdk-4.7'
