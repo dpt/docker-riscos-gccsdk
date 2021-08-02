@@ -15,6 +15,8 @@ ARG MAKEFLAGS
 
 #RUN cd gcc4 && ./build-world
 
+RUN mkdir -p /home/riscos && touch /home/riscos/foo
+
 FROM ubuntu-base
 # host Jenkins user is 1001
 RUN groupadd jenkins
