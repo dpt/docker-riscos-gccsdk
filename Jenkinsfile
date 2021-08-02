@@ -24,7 +24,7 @@ pipeline {
       stage('Docker build') {
         steps {
           script {
-            dockerImage = docker.build("riscos-gccsdk-4.7", "-v ${WORKSPACE}:/usr/src/gccsdk ./riscos-gccsdk-4.7")
+            dockerImage = docker.build("riscos-gccsdk-4.7", "./riscos-gccsdk-4.7")
           }
 	}
       }
