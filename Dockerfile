@@ -4,6 +4,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y libtool 
 
 FROM ubuntu-base as builder
 
+WORKDIR /usr/src/gccsdk
+
 #COPY ./gcc4 gcc4
 
 #COPY ./gccsdk-params gcc4
