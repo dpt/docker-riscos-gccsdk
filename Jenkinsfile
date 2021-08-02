@@ -16,13 +16,13 @@ pipeline {
         }
         steps {
 	   sh 'echo "Compile successful"'
-           sh 'ls -l ${env.WORKSPACE}'
+           sh 'ls -l ${WORKSPACE}'
         }
       }
       stage('Docker build') {
 	steps {
           sh 'echo "Build docker image here"'
-	  sh 'ls -l ${env.WORKSPACE}'
+	  sh 'ls -l ${WORKSPACE}'
         }
       }
     }

@@ -13,7 +13,7 @@ COPY ./gccsdk-params gcc4
 ARG NUMPROC=$(nproc)
 ARG MAKEFLAGS
 
-RUN cd gcc4 && ./build-world
+#RUN cd gcc4 && ./build-world
 
 FROM ubuntu-base
 # host Jenkins user is 1001
