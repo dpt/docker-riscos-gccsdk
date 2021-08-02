@@ -21,7 +21,7 @@ pipeline {
            sh 'ls -l ${WORKSPACE}/riscos-gccsdk-4.7'
            sh 'rm -rf riscos-gccsdk-4.7/home'
            sh 'mkdir -p riscos-gccsdk-4.7/home'
-           sh 'cp -rf /home/riscos riscos-gccsdk-4.7/'
+           sh 'cp -rf /home/riscos riscos-gccsdk-4.7/home/riscos'
            sh 'cp -rf gccsdk-params riscos-gccsdk-4.7/home/riscos/gccsdk-params'
         }
       }
