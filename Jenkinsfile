@@ -17,6 +17,7 @@ pipeline {
         steps {
 	   sh 'echo "Compile successful"'
            sh 'ls -l ${WORKSPACE}'
+           sh 'mv ./home riscos-gccsdk-4.7/'
         }
       }
       stage('Docker build') {
