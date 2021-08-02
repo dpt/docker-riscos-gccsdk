@@ -1,4 +1,7 @@
 FROM ubuntu:20.04 as ubuntu-base
+# host Jenkins user is 1001
+RUN useradd -r -u 1001 -g jenkins jenkins
+USER jenkins
 
 WORKDIR /usr/src/gccsdk
 
@@ -16,6 +19,9 @@ ARG MAKEFLAGS
 RUN cd gcc4 && ./build-world
 
 FROM ubuntu-base
+# host Jenkins user is 1001
+RUN useradd -r -u 1001 -g jenkins jenkins
+USER jenkins
 
 ENV PATH=/home/riscos/cross/bin:${PATH}
 
