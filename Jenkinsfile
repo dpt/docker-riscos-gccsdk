@@ -15,10 +15,12 @@ pipeline {
           }    
         }
         steps {
-           sh 'mkdir -p ./home/riscos && touch ./home/riscos/foo'
+           sh 'cd gcc4 && MAKEFLAGS=-j$(nproc) ./build-world'
 	   sh 'echo "Compile successful"'
-           sh 'ls -l ${WORKSPACE}'
-           sh 'cp -rf ./home riscos-gccsdk-4.7/'
+           sh 'ls -l ${WORKSPACE}/riscos-gccsdk-4.7'
+           sh 'rm -rf riscos-gccsdk-4.7/home'
+           sh 'mkdir -p riscos-gccsdk-4.7/home'
+           sh 'cp -rf /home/riscos riscos-gccsdk-4.7/'
            sh 'cp -rf gccsdk-params riscos-gccsdk-4.7/home/riscos/gccsdk-params'
         }
       }
