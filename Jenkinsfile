@@ -18,7 +18,7 @@ pipeline {
            sh 'mkdir -p ./home/riscos && touch ./home/riscos/foo'
 	   sh 'echo "Compile successful"'
            sh 'ls -l ${WORKSPACE}'
-           sh 'mv ./home riscos-gccsdk-4.7/'
+           sh 'cp -rf ./home riscos-gccsdk-4.7/'
         }
       }
       stage('Docker build') {
