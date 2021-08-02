@@ -20,11 +20,7 @@ pipeline {
         }
       }
       stage('Docker build') {
-	steps {
-          sh 'echo "Build docker image here"'
-	  sh 'ls -l ${WORKSPACE}'
-          def myImage = docker.build("riscos-gccsdk-4.7", "-v ${WORKSPACE}:/usr/src/gccsdk ./riscos-gccsdk-4.7")
-        }
+        def myImage = docker.build("riscos-gccsdk-4.7", "-v ${WORKSPACE}:/usr/src/gccsdk ./riscos-gccsdk-4.7")
       }
     }
 
