@@ -11,7 +11,7 @@ pipeline {
           dockerfile {
             label 'docker'
             reuseNode true
-            args '-v /var/run/docker.sock:/var/run/docker.sock -v ${env.WORKSPACE}:/home/riscos'
+            args '-v /var/run/docker.sock:/var/run/docker.sock -v ${WORKSPACE}:/home/riscos'
           }    
         }
         steps {
