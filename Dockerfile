@@ -15,4 +15,4 @@ ARG MAKEFLAGS
 
 #RUN cd gcc4 && ./build-world
 
-RUN mkdir -p ./home/riscos && touch ./home/riscos/foo
+#RUN mkdir -p ./home/riscos && touch ./home/riscos/foo
