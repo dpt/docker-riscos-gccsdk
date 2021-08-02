@@ -23,8 +23,7 @@ pipeline {
 	steps {
           sh 'echo "Build docker image here"'
 	  sh 'ls -l ${env.WORKSPACE}'
-          }
-	}
+        }
       }
     }
 
