@@ -1,5 +1,6 @@
 FROM ubuntu:20.04 as ubuntu-base
 # host Jenkins user is 1001
+RUN groupadd jenkins
 RUN useradd -r -u 1001 -g jenkins jenkins
 USER jenkins
 
@@ -20,6 +21,7 @@ RUN cd gcc4 && ./build-world
 
 FROM ubuntu-base
 # host Jenkins user is 1001
+RUN groupadd jenkins
 RUN useradd -r -u 1001 -g jenkins jenkins
 USER jenkins
 
