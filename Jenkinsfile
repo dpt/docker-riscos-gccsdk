@@ -11,7 +11,7 @@ pipeline {
           dockerfile {
             label 'docker'
             reuseNode true
-            args '-v /var/run/docker.sock:/var/run/docker.sock -v ${WORKSPACE}:/home/riscos'
+            args '-v /var/run/docker.sock:/var/run/docker.sock -v ${WORKSPACE}:/usr/src/gccsdk'
           }    
         }
         steps {
@@ -23,6 +23,7 @@ pipeline {
 	steps {
           sh 'echo "Build docker image here"'
 	  sh 'ls -l ${WORKSPACE}'
+          def myImage = docker.build("riscos-gccsdk-4.7", "-v ${WORKSPACE}:/usr/src/gccsdk ./riscos-gccsdk-4.7")
         }
       }
     }

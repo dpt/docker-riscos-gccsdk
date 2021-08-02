@@ -4,16 +4,13 @@ WORKDIR /usr/src/gccsdk
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y libtool patch wget help2man autogen m4 gcc g++ bison flex subversion gperf sed make build-essential autoconf2.13 automake cvs doxygen dpkg-dev gettext intltool libglib2.0-dev libpopt-dev pkg-config policykit-1 rman subversion unzip wget xsltproc texinfo git libx11-dev tcl subversion docker.io
 
-FROM ubuntu-base as builder
+FROM ubuntu-base
 
-#COPY ./gcc4 gcc4
+ENV PATH=/home/riscos/cross/bin:${PATH}
 
-#COPY ./gccsdk-params gcc4
+WORKDIR /usr/src/gccsdk
 
-ARG NUMPROC=$(nproc)
-ARG MAKEFLAGS
+COPY ./home/riscos /home/riscos
+COPY ./gccsdk-params /home/riscos
 
-#RUN cd gcc4 && ./build-world
-
-RUN mkdir -p ./home/riscos && touch ./home/riscos/foo
-
+CMD /bin/bash 
