@@ -7,6 +7,5 @@ FROM ubuntu-base
 ENV PATH=/home/riscos/cross/bin:${PATH}
 
 COPY ./home/riscos /home/riscos
-COPY ./gccsdk-params /home/riscos
 
 CMD /bin/bash 
