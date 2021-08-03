@@ -27,8 +27,9 @@ pipeline {
       }
       stage('Docker build') {
         steps {
+	  withCredentials([usernamePassword(credentialsId: 'dockerHub', usernameVariable: 'HUB_USER', passwordVariable: 'HUB_TOKEN')]) 
           script {
-            dockerImage = docker.build("riscos-gccsdk-4.7", "./riscos-gccsdk-4.7")
+            dockerImage = docker.build("riscosdotinfo/riscos-gccsdk-4.7:ci", "./riscos-gccsdk-4.7")
             dockerImage.push()
           }
 	}
