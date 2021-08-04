@@ -8,7 +8,7 @@ RUN mkdir -p /home/riscos && \
       build-essential autoconf2.13 automake cvs doxygen dpkg-dev gettext \
       intltool libglib2.0-dev libpopt-dev pkg-config policykit-1 rman \
       subversion unzip wget xsltproc texinfo git libx11-dev tcl \
-      subversion automake1.11 meson cmake \
+      subversion automake1.11 meson cmake
 
 ENV PATH=/home/riscos/cross/bin:${PATH}
 
