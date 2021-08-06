@@ -18,6 +18,9 @@ pipeline {
           }    
         }
         steps {
+	  sh "SVN revision ${svnRevision}"
+	}
+/*        steps {
            sh 'cp ./gccsdk-params ./gcc4'
            sh 'cd gcc4 && make clean && MAKEFLAGS=-j$(nproc) ./build-world'
 	   sh 'echo "Compile successful"'
@@ -26,10 +29,10 @@ pipeline {
            sh 'mkdir -p riscos-gccsdk-4.7/home'
            sh 'cp -rf /home/riscos riscos-gccsdk-4.7/home/riscos'
            sh 'cp -rf gccsdk-params riscos-gccsdk-4.7/home/riscos/gccsdk-params'
-        }
+        }*/
       }
       stage('Docker build') {
-        steps {
+/*        steps {
           script {
             dockerImage = docker.build("riscosdotinfo/riscos-gccsdk-4.7:ci", "./riscos-gccsdk-4.7")
 	    docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
@@ -38,7 +41,7 @@ pipeline {
             }
           }
 	}
-      }
+*/      }
     }
 
 }
