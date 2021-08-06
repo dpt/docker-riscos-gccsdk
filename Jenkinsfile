@@ -32,16 +32,16 @@ pipeline {
         }*/
       }
       stage('Docker build') {
-/*        steps {
-          script {
+        steps {
+/*          script {
             dockerImage = docker.build("riscosdotinfo/riscos-gccsdk-4.7:ci", "./riscos-gccsdk-4.7")
 	    docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
               dockerImage.push('ci')
               dockerImage.push("r${env.svnRevision}")
             }
           }
-	}
-*/      }
+*/	}
+      }
     }
 
 }
