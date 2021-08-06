@@ -33,6 +33,7 @@ pipeline {
       }
       stage('Docker build') {
         steps {
+            sh 'echo "Done"'
 /*          script {
             dockerImage = docker.build("riscosdotinfo/riscos-gccsdk-4.7:ci", "./riscos-gccsdk-4.7")
 	    docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
