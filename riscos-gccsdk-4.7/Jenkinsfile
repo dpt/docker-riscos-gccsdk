@@ -29,7 +29,7 @@ pipeline {
            sh 'mkdir -p riscos-gccsdk-4.7/home'
            sh 'cp -rf /home/riscos riscos-gccsdk-4.7/home/riscos'
            sh 'cp -rf gccsdk-params riscos-gccsdk-4.7/home/riscos/gccsdk-params'
-           sh 'cd .. && tar Jcf gcc4.tar.xz gcc4'
+           sh 'tar Jcf gcc4.tar.xz gcc4'
         }
       }
       stage('Docker build') {
