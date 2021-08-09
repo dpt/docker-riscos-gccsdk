@@ -9,3 +9,5 @@ RUN mkdir -p /home/riscos && \
       intltool libglib2.0-dev libpopt-dev pkg-config policykit-1 rman \
       subversion unzip wget xsltproc texinfo git libx11-dev tcl \
       subversion automake1.11 meson cmake \
+
+CMD /bin/bash
