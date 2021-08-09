@@ -41,10 +41,10 @@ pipeline {
           }
 	}
       }
-      post {
-        always {
-            archiveArtifacts artifacts: 'gcc4.tar.xz', onlyIfSuccessful: true
-        }
+    }
+    post {
+      always {
+          archiveArtifacts artifacts: 'gcc4.tar.xz', onlyIfSuccessful: true
       }
     }
 }
