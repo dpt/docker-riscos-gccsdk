@@ -1,0 +1,16 @@
+pipeline {
+  agent { label 'docker' }
+    stages {
+      stage('Docker build') {
+        steps {
+          script {
+            dockerImage = docker.build("riscosdotinfo/riscos-gccsdk-ubuntu:focal", ".")
+	    docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
+              dockerImage.push()
+            }
+          }
+	}
+      }
+    }
+
+}
