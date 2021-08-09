@@ -4,7 +4,7 @@ pipeline {
       stage('Docker build') {
         steps {
           script {
-            dockerImage = docker.build("riscosdotinfo/riscos-gccsdk-ubuntu:focal", ".")
+            dockerImage = docker.build("riscosdotinfo/ubuntu-gccsdk-env:focal", ".")
 	    docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
               dockerImage.push()
             }
