@@ -1,7 +1,7 @@
 FROM riscosdotinfo/ubuntu-gccsdk-env:focal
 
-ENV PATH=/home/riscos/cross/bin:${PATH}
+RUN mkdir -p /home/riscos && chmod 777 /home/riscos
 
-COPY ./home/riscos /home/riscos
+ENV PATH=/home/riscos/cross/bin:${PATH}
 
 CMD /bin/bash 
