@@ -32,6 +32,7 @@ pipeline {
            sh 'tar Jxf gcc4.tar.xz'
            sh 'mkdir -p build'
            sh 'rm -f autobuilder/develop/gcc/gcc.dwarf2out.c.p'
+           sh 'cd gcc4/builddir && rm -f installed-buildtools-for-gcc && ln -s installed-buildtools-for-binutils installed-buildtools-for-gcc' 
            sh 'cp riscos-gccsdk-10/build-setvars build/'
            sh 'cd /home/riscos && ln -s ${WORKSPACE}/gcc4'
            sh 'cd build && ../autobuilder/build -v gcc'
