@@ -33,6 +33,7 @@ pipeline {
            sh 'mkdir -p build'
            sh 'rm -f autobuilder/develop/gcc/gcc.dwarf2out.c.p'
            sh 'cp riscos-gccsdk-10/build-setvars build/'
+           sh 'cd /home/riscos && ln -s ${WORKSPACE}/gcc4'
            sh 'cd build && ../autobuilder/build -v gcc'
 	   sh 'echo "Compile successful"'
         }
