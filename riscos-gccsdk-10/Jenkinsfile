@@ -13,7 +13,7 @@ pipeline {
          steps {
              script {
                 step ([$class: 'CopyArtifact',
-                    projectName: 'riscos-gccsdk-4.7',
+                    projectName: 'gcc-4.7-docker',
                     filter: "gcc4.tar.xz"
                     ]);
             }
