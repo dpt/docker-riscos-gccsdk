@@ -22,7 +22,7 @@ pipeline {
       stage('Compile') {
         agent {
           docker {
-            image 'riscosdotinfo/ubuntu-gccsdk-env:focal'
+            image 'riscosdotinfo/riscos-gccsdk-4.7:ci'
             label 'docker'
             reuseNode true
             args '-v /var/run/docker.sock:/var/run/docker.sock -v ${WORKSPACE}:/usr/src/gccsdk'
