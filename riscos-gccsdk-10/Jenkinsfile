@@ -32,7 +32,7 @@ pipeline {
            sh 'tar Jxf gcc4.tar.xz'
            sh 'mkdir -p build'
            sh 'rm -f autobuilder/develop/gcc/gcc.dwarf2out.c.p'
-           sh 'cp ./build-setvars build/'
+           sh 'cp riscos-gccsdk-10/build-setvars build/'
            sh 'cd build && ../autobuilder/build -v gcc'
 	   sh 'echo "Compile successful"'
         }
