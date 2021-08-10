@@ -25,7 +25,7 @@ pipeline {
             image 'riscosdotinfo/riscos-gccsdk-4.7:ci'
             label 'docker'
             reuseNode true
-            args '-v /var/run/docker.sock:/var/run/docker.sock -v ${WORKSPACE}:/usr/src/gccsdk'
+            args '-v /var/run/docker.sock:/var/run/docker.sock -v ${WORKSPACE}:/usr/src/gccsdk -u root:root'
           }
         }
         steps {
