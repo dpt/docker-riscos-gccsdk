@@ -29,6 +29,7 @@ pipeline {
           }
         }
         steps {
+           sh 'rm -rf gcc4/builddir/installed-buildtools-for-gcc'
            sh 'tar Jxf gcc4.tar.xz'
            sh 'mkdir -p build'
            sh 'rm -f autobuilder/develop/gcc/gcc.dwarf2out.c.p'
