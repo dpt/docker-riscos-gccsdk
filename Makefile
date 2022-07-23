@@ -3,7 +3,7 @@ all:	build
 GCC_REV=$(shell svn info --show-item revision gcc4 | sed -e 's/ //g')
 CONTAINER_TAG=r$(GCC_REV)
 CONTAINER_NAME=riscosdotinfo/riscos-gccsdk-4.7
-NUMPROC?=$(nproc)
+NUMPROC?=$(shell nproc)
 
 export NUMPROC
 
